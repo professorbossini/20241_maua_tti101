@@ -7,16 +7,7 @@ public class SomaDeDoisNumeros{
     double resultado;
     //entrada
     //classe utilitária chamada Double (empacotadora (wrapper))
-    boolean digitouValido = false;
-    do{
-      try{
-        primeiroValor = Double.parseDouble(JOptionPane.showInputDialog("Digite o primeiro valor"));
-        digitouValido = true;
-      }
-      catch(Exception e){
-        JOptionPane.showMessageDialog(null, "Erro");
-      }      
-    }while(!digitouValido);
+    primeiroValor = Double.parseDouble(JOptionPane.showInputDialog("Digite o primeiro valor"));
     
     segundoValor = Double.parseDouble(JOptionPane.showInputDialog("Digite o segundo valor"));
     //processamento
@@ -24,6 +15,8 @@ public class SomaDeDoisNumeros{
     //saida
     //JOptionPane.showMessageDialog(null, resultado);
     //2 + 3 = 5
-    //pesquisar sobre String.format 
+    //pesquisar sobre String.format
+    String exibir = String.format("%f + %f = %f", primeiroValor, segundoValor, resultado);
+    JOptionPane.showMessageDialog(null, exibir); 
   }
 }
