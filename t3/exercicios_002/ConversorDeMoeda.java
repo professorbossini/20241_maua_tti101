@@ -12,7 +12,8 @@ public class ConversorDeMoeda{
     System.out.println("Digite a quantidade de dólares");
     quantidadeDeDolares = leitor.nextFloat();
     //processamento
-
+    valorEmReal = quantidadeDeDolares * cotacaoDoDolar;
     //saída
+    System.out.println("O resultado é: " + valorEmReal);
   }
 }
