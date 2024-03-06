@@ -18,16 +18,14 @@ public class DistanciaEntre2Pontos{
     System.out.println("Digite y2");
     y2 = leitor.nextFloat();
     //processamento
-    distancia = (float) Math.sqrt((x2 - x1) * (x2 - x1) + Math.pow(y2 - y1, 2));
-    //a = b ** 2
-    //saida
-    //A distancia entre p1(x1, y1) e p2(x2, y2) é: distancia
-    System.out.println("A distancia entre p1(" + x1 + ", " + y1 + ") e p2(" + x2 + ", " + y2 + ") é: " + distancia);
-
-    System.out.printf(
-      "A distancia entre p1(%.2f, %f) e p2(%f, %f) é: %f",
-      x1, y1, x2, y2, distancia
-    );
+    distancia = (float) Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+    //saída
+    System.out.println("A distância entre os pontos é: " + distancia);
+    //nao, eu quero que faca com string.format
+    System.out.printf("A distância entre os pontos é: %.2f\n", distancia);
+    //exiba x1, x2, y1, y2 com string.format
+    System.out.printf("x1 = %.2f, x2 = %.2f, y1 = %.2f, y2 = %.2f\n", x1, x2, y1, y2);
+   
 
   }
 }
