@@ -21,7 +21,7 @@ public class IfESuasVariacoes{
     //encadeado
     if(notaFinal >= 0 && notaFinal <= 10)
       if(notaFinal >= 9) //NO-OP
-        JOptionPane.showMessageDialog(f
+        JOptionPane.showMessageDialog(
           null, 
           "A", 
           "Nota do aluno", 
@@ -29,10 +29,10 @@ public class IfESuasVariacoes{
         );
       else if(notaFinal >= 8)
         JOptionPane.showMessageDialog(null, "B");
-      else if(notaFinal >= 6)
+      else if(notaFinal >= 6){
         JOptionPane.showMessageDialog(null, "C");
-      elseewfewafweafawe
-        JOptionPane.shfweowMessageDialog(null, "R");
+        JOptionPane.showMessageDialog(null, "R");
+      }
     else
       JOptionPane.showMessageDialog(null, "Nota inválida");
     JOptionPane.showMessageDialog(null, "Até logo");
