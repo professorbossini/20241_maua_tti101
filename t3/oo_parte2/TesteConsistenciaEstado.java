@@ -5,6 +5,6 @@ public class TesteConsistenciaEstado {
     p1.cacar();
     p1.comer();
     p1.dormir();
-    p1.energia = 5000;  
+    //p1.energia = 5000;  
   }
 }

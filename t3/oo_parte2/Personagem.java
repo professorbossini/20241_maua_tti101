@@ -2,7 +2,10 @@ public class Personagem{
   
   //variáveis de instância(instância é sinônimo de objeto)
   String nome;
-  int energia = 10, fome = 0, sono = 0;
+  private int energia = 10, fome = 0, sono = 0;
+  // private int energia = 10;
+  // private int fome = 0;
+  // private int sono = 0;
 
   //método de instância
   void cacar(){
@@ -37,6 +40,23 @@ public class Personagem{
       default:
         System.out.println(nome + " comendo");
         --fome;
+        energia = energia < 10 ? energia + 1 : energia;
     }
+  }
+
+  public void setEnergia(int energia){
+    if(energia >= 0 && energia <= 10)
+      this.energia = energia;
+  }
+
+  public int getEnergia(){
+    return energia;
+  }
+
+  public String toString(){
+    return String.format(
+      "Energia: %d, Fome: %d, Sono: %d",
+      energia, fome, sono
+    );
   }
 }
