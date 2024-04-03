@@ -1,10 +1,15 @@
 public class Personagem{
+
  //variáveis de instância(instância é sinônimo de objeto) 
   String nome; //variável de referência
-  int energia = 10, fome = 0, sono = 0; //variáveis primitivas
+  // private int energia = 10;
+  // private int fome = 0;
+  // private int sono = 0; //variáveis primitivas
+
+  private int energia = 10, fome = 0, sono = 0;
 
   //método: tipo de retorno, nome, lista de parâmetros e corpo
-  void cacar(){
+void cacar(){
     if(energia >= 2){
       System.out.println(nome + " caçando");
       energia -= 2;// energia = energia - 2;
@@ -33,17 +38,25 @@ public class Personagem{
     }
   }
   void dormir(){
-    System.out.println("Dormindo");
+    //use apenas if/else
+    //somente pode dormir se tiver sono (sono >= 1)
+    //depois de dormir, aumentar de 1 o nível de energia
+    //diminuir de 1 o nível de sono.
+    if(sono > 0){
+      System.out.println(nome + " dormindo");
+      if(energia < 10) 
+        energia += 1;// energia = energia + 8;// energia++;
+      --sono;
+    }
+    else
+      System.out.println(nome + " sem sono");
   }
 
-  public void teste(){
-
-    String nome = "Ana";
-    //mostrar o texto: Testando o nome Ana
-    //por concatenação
-    System.out.println("Testando o nome " + nome);
-    //por substituição
-    System.out.printf("Testando o nome %s", nome);
-
+  public String toString(){
+    return String.format(
+      "Energia: %d, Fome: %d, Sono: %d",
+      energia, fome, sono
+    );
   }
+
 }
