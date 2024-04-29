@@ -1,0 +1,7 @@
+Download JDK 21:
+(Windows): https://download.oracle.com/java/21/latest/jdk-21_windows-x64_bin.exe
+(Linux): https://download.oracle.com/java/21/latest/jdk-21_linux-x64_bin.tar.gz
+(Mac): https://download.oracle.com/java/21/latest/jdk-21_macos-x64_bin.tar.gz
+
+Download VSCode:
+https://code.visualstudio.com/download

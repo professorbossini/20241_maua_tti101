@@ -1,0 +1,7 @@
+- Prova de Multipla Escolha;
+- 10 questões no total;
+- Cada questão terá um techo de código que deverá ser analisado.
+
+- Consulta: Não pode usar nada além do navegador e não pode usar código. A prova é com consulta SOMENTE aos PDFs de aula e materiais escritos trazidos pelos alunos.
+
+- Só pode fazer na máquina dos laboratórios, não pode fazer com computador pessoal. As máquinas serão monitoradas na hora da prova por um software que mostra a tela de todos para o professor.
