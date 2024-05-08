@@ -1,16 +1,17 @@
-public class VetorDinamico {
-  private int [] elementos;
+//generics (Java 5+)
+public class VetorDinamico <Tipo>{
+  private Tipo [] elementos;
   private int quantidade;
   private int capacidade;
 
   //construtor
   //executa quando você fala new
   VetorDinamico(){
-    elementos = new int[4];
+    elementos = (Tipo[]) new Object[4];
     quantidade = 0;
     capacidade = elementos.length;
   }
-  void adicionar(int e){
+  void adicionar(Tipo e){
     if(estaCheio())
       redimensionar();
     elementos[quantidade] = e;
@@ -31,7 +32,7 @@ public class VetorDinamico {
     //1. dobrar a capacidade
     capacidade = capacidade * 2;
     //2. alocar um vetor de ints chamado aux com esse nova capacidade
-    var aux = new int[capacidade];
+    var aux = (Tipo[]) new Object[capacidade];
     //3. copiar todo mundo de elementos para aux
     for (int i = 0; i < quantidade; i++){
       aux[i] = elementos[i];
