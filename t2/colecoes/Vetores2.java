@@ -4,7 +4,6 @@ public class Vetores2 {
     var gerador = new Random();
     // int tamanho = 8;
     var v = new int[4];
-    System.gc();
 
     //preenchendo um vetor
     for(int i = 0; i < v.length; i++){
