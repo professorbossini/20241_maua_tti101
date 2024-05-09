@@ -17,4 +17,10 @@ public class Musica {
   public void setTitulo(String titulo) {
     this.titulo = titulo;
   }
+
+  public boolean equals(Object o){
+    //downcasting
+    Musica m = (Musica)o;
+    return this.titulo.equals(m.getTitulo());
+  }
 }
