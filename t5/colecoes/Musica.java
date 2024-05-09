@@ -1,17 +1,20 @@
+import java.util.*;
 public class Musica {
   private String titulo;
-  private int avaliacao;
+  private List <Integer> avaliacoes;
 
-  public int getAvaliacao() {
-    return avaliacao;
+  //construtor
+  //sempre executa quando falamos new
+  Musica(){
+    avaliacoes = new ArrayList<>();
+  }
+
+  public List<Integer> getAvaliacoes() {
+    return avaliacoes;
   }
 
   public String getTitulo() {
     return titulo;
-  }
-
-  public void setAvaliacao(int avaliacao) {
-    this.avaliacao = avaliacao;
   }
 
   public void setTitulo(String titulo) {
@@ -25,8 +28,26 @@ public class Musica {
   }
 
   public String toString(){
-    //Título: One, Avaliação: 5
-    return String.format("Título: %s, Avaliação: %d", titulo, avaliacao);
+    /*
+     * Título: One
+     * Avaliações:
+     * 1 2 5 4 3 
+     */
+    var sb = new StringBuilder("");
+    sb.append("Título: ").append(titulo).append("\n");
+    //se tiver avaliações, mostrar o texto Avaliações: e mais ainda as avaliações (use um for each)
+    if(avaliacoes.size() > 0){
+      sb.append("Avaliações:").append("\n");
+      for (var avaliacao : avaliacoes){
+        sb.append(avaliacao).append(" ");
+      }
+    }
+    //caso contrário, exibir "Música sem avaliações"
+    else{
+      sb.append("Música sem avaliações");
+    }
+    return sb.toString();
   }
+
   
 }
