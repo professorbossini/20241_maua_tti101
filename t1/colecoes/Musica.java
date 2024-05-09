@@ -1,17 +1,19 @@
+import java.util.*;
 public class Musica {
   private String titulo;
-  private int avaliacao;
+  private List <Integer> avaliacoes;
 
-  public int getAvaliacao() {
-    return avaliacao;
+  //executa assim que falamos new
+  public Musica(){
+    avaliacoes = new ArrayList<>();
   }
 
+  public List<Integer> getAvaliacoes() {
+    return avaliacoes;
+  }
+  
   public String getTitulo() {
     return titulo;
-  }
-
-  public void setAvaliacao(int avaliacao) {
-    this.avaliacao = avaliacao;
   }
 
   public void setTitulo(String titulo) {
@@ -22,5 +24,18 @@ public class Musica {
     //downcasting
     Musica m = (Musica)o;
     return this.titulo.equals(m.getTitulo());
+  }
+
+  public String toString(){
+    var sb = new StringBuilder("");
+    sb.append("Título: ").append(titulo).append("\n");
+    if(!avaliacoes.isEmpty()){
+      sb.append("Histórico de avaliações:").append("\n");
+      //for each / enhanced for
+      for (var avaliacao : avaliacoes){
+        sb.append(avaliacao).append(" ");
+      }
+    }
+    return sb.toString();
   }
 }

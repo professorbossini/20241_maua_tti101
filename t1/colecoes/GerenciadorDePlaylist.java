@@ -41,17 +41,32 @@ public class GerenciadorDePlaylist {
             do{
               avaliacao = Integer.parseInt(JOptionPane.showInputDialog("Avaliação? Digite algo entre 1 e 5"));
             }while(avaliacao < 1 || avaliacao > 5);
-            musicas.get(indice).setAvaliacao(avaliacao);
+            musicas.get(indice).getAvaliacoes().add(avaliacao);
             JOptionPane.showMessageDialog(null, "Avaliação OK");  
           }
           else{
-
+            //caso contrário, falar que a musica não existe
+            JOptionPane.showMessageDialog(null, "Música não existe!");
           }
-
-
-          //caso contrário, falar que a musica não existe
           break;
         }
+        case 3:{
+          if(!musicas.isEmpty()){
+            var sb = new StringBuilder("");
+            for (var musica : musicas){
+              sb.append(musica)
+              .append("\n")
+              .append("************")
+              .append("\n");
+            }
+            JOptionPane.showMessageDialog(null, sb);
+          }
+          else{
+            JOptionPane.showMessageDialog(null, "Não há músicas");
+          }
+          break;
+        }
+
       }
 
     }while (op != 0);
