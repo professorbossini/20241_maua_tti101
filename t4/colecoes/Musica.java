@@ -1,17 +1,22 @@
+import java.util.*;
+
+import javax.swing.JOptionPane;
 public class Musica {
   private String titulo;
-  private int avaliacao;
+  private List <Integer> avaliacoes;
 
-  public int getAvaliacao() {
-    return avaliacao;
+
+  //isso é um construtor, ele executa assim que a gente fala new
+  Musica(){
+    avaliacoes = new ArrayList<>();
+  }
+
+  public List<Integer> getAvaliacoes() {
+    return avaliacoes;
   }
 
   public String getTitulo() {
     return titulo;
-  }
-
-  public void setAvaliacao(int avaliacao) {
-    this.avaliacao = avaliacao;
   }
 
   public void setTitulo(String titulo) {
@@ -25,9 +30,25 @@ public class Musica {
   }
 
   public String toString(){
-    //Título: One, Avaliação: 5
-    return String.format(
-      "Título: %s, Avaliação: %d", titulo, avaliacao  
-    );
+    /*
+     * Título: One
+     * Música sem avaliações
+     * 
+     * Título: One
+     * Avaliações: 5 5 4 5 3
+     */
+    //use StringBuilder para fazer isso em 2 minutos
+    var sb = new StringBuilder("");
+    sb.append("Título: ").append(titulo).append("\n");
+    if(avaliacoes.isEmpty()){
+      sb.append("Música sem avaliações");
+    }
+    else{
+      sb.append("Avaliações: ");
+      for(var avaliacao : avaliacoes){
+        sb.append(avaliacao).append(" ");
+      }
+    }
+    return sb.toString();
   }
 }

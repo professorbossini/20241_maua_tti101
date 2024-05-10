@@ -5,7 +5,7 @@ public class GerenciadorDePlaylist {
   public static void main(String[] args) {
     // List <Musica> playlist = new ArrayList<>();
     var playlist = new ArrayList<Musica>();
-    var menu = "1-Cadastrar\n2-Avaliar\n3-Listar\n0-Sair";
+    var menu = "1-Cadastrar\n2-Avaliar\n3-Listar\n4-Ver média de avaliações de uma música\n5-Apagar avaliações de uma música\n6-Apagar avaliações de todas as músicas\n0-Sair";
     int op;
     do{
       op = Integer.parseInt(JOptionPane.showInputDialog(menu));
@@ -47,7 +47,7 @@ public class GerenciadorDePlaylist {
                 JOptionPane.showInputDialog("Avaliação?(1 a 5)")
               );
             }while (avaliacao < 1 || avaliacao > 5);
-            playlist.get(indice).setAvaliacao(avaliacao);
+            playlist.get(indice).getAvaliacoes().add(avaliacao);
             JOptionPane.showMessageDialog(null, "Avaliação OK!");
           }
           //se a musica nao existir, dizer que ela nao existe
@@ -78,6 +78,33 @@ public class GerenciadorDePlaylist {
           }
           else
             JOptionPane.showMessageDialog(null, "Lista vazia");
+          break;
+        }
+        case 4:{
+          //usuario digita o titulo
+          //voce constroi um objeto musica
+          //atribui o titulo
+          //se a musica existir
+            //se a musica tiver avaliacoes
+              //calcular e exibir a media
+            //senao, dizer que nao tem avaliacoes
+          //senao, dizer que a musica nao existe
+          break;
+        }
+        case 5:{
+
+          break;
+        }
+        case 6:{
+          if(!playlist.isEmpty()){
+            for (Musica m : playlist){
+              m.getAvaliacoes().clear();
+            }
+            JOptionPane.showMessageDialog(null, "Todas as avaliações removidas!");
+          }
+          else{
+            JOptionPane.showMessageDialog(null, "Playlist vazia");
+          }
           break;
         }
         case 0:{
